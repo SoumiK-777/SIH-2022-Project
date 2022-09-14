@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='register.css')}}" />
+    <title>Register</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="main-container">
+      <form action="{{ url_for('register')}}" method="post">
+        <div class="container">
+          <h1 class="reg-head">Student Registration</h1>
+          <hr />
+
+          <div class="form-item">
+            <label for="name" id="name">Name</label>
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="email" id="email">Email</label>
+            <input
+              type="email"
+              placeholder="someone@gmail.com"
+              name="email"
+              id="email"
+              required 
+            />
+          </div>
+          <div class="form-item">
+            <label for="psw" id="phone">Student's Phone Number</label>
+            <input
+              type="tel"
+              placeholder="+91- XXXXXXXXXX "
+              name="phone"
+              id="phone"
+              required 
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="psw" id="pphone">Parent's Phone Number</label>
+            <input
+              type="tel"
+              placeholder="+91- XXXXXXXXXX "
+              name="pphone"
+              id="pphone"
+              required 
+            />
+          </div>
+          <br />
+        
+            <div class="button">
+                <a id="send" class="registerbtn" href="{{url_for('upload')}}">Register</button>
+            </div>
+            
+        </div>
+    
+        </div>
+      </form>
+    </div>
+   
+  </body>
+</html>

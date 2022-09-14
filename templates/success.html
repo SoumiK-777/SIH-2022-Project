@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d72abefdfa.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #top {
+
+            width: 320px;
+            
+            align-items: center;
+            justify-content: center;
+            margin: 15rem auto  ;
+            
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        #c {
+            height: 250px;
+            
+           
+        }
+
+        body {
+            /* content: "";
+            position: absolute; */
+           background-image: linear-gradient(
+    to right top,
+    #5552ff,
+    #7671ff,
+    #938fff,
+    #aeacff,
+    #cac9ff
+  );
+            height: 100%;
+            width: 100%;
+            /* z-index: -1; */
+            /* opacity: 0.6; */
+        }
+
+        #up {
+            padding: 15px;
+            background-color: #8BC34A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+            padding:  1.625rem;
+        }
+
+        #success {
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1em;
+            /* margin-top: 0.4em; */
+            margin-bottom: 0;
+        }
+
+        #lower {
+            padding: 2em 2em 5em 2em;
+            background: #fff;
+            display: block;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        #message {
+            margin-top: -.5em;
+            color: #757575;
+            letter-spacing: 1px;
+        }
+        #mess{
+            padding:7px;
+        }
+#qw{
+    padding-right:1rem;
+}
+        #btn {
+            position: relative;
+            top: 1.8em;
+            text-decoration: none;
+            background: #8bc34a;
+            color: #fff;
+            margin: auto;
+            padding: .8em 3em;
+            -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            border-radius: 25px;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+
+        #btn:hover {
+            -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <div id="c">
+            <div id="up">
+                <i class="fa fa-check" id="qw"></i>
+                <h3 id="success">Success</h3>
+
+            </div>
+            <div id="lower">
+                <p id="mess">Congratulations! You have successfully registered.</p>
+                <a href="{{url_for('index')}}" id="btn">Continue</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    to right top,
+    #5552ff,
+    #7671ff,
+    #938fff,
+    #aeacff,
+    #cac9ff
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+.main-container {
+  overflow: hidden;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6b6a6c;
+  font-family: "Poppins", sans-serif;
+}
+.signin > p {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  color: #3d3d3d;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+.signin > p > a {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  color: #5552ff;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+.container {
+  padding: 0px 50px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  height: 580px;
+  border-radius: 7px;
+
+  background-color: white;
+}
+.reg-head{
+  display: flex;
+  align-items: center;
+}
+input[type="text"],
+input[type="password"],
+input[type="tel"], 
+input[type="email"]{
+  width: 100%;
+  display: inline-block;
+  border: none;
+  color: #717171;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #5552ff;
+  color: white;
+  padding: 16px 20px;
+  margin: 10px 0;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  box-shadow: rgba(85, 82, 255, 0.336) 0px 15px 25px,
+    rgba(85, 82, 255, 0.218) 0px 5px 10px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+.form-item {
+  border: 1px solid #d4d4d4d0;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500 !important;
+  color: #3d3d3d;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+

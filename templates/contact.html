@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devcrafters |Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}" />
+</head>
+
+<body>
+
+    <div class="navbar" id="navbar">
+        <!-- <image src="{{url_for('static',filename='img/shape1.svg')}}" alt="shape" class="vector1" /> -->
+        <a href="#"><span class="logo">DevCrafters</span></a>
+        <ul>
+            <li class="current"><a href="{{url_for('index')}}">HOME</a></li>
+            <li><a href="{{url_for('about')}}">ABOUT</a></li>
+            <li><a href="{{url_for('contact')}}">CONTACT US</a></li>
+            <li><a href="{{url_for('leave')}}">LEAVE NOTE</a></li>
+            <li><a href="{{url_for('parent')}}">PARENT LOGIN</a></li>
+            <a href="{{url_for('login')}}"><class="btn" style="text-decoration:none">Sign In</a>
+            <!-- <image src="{{url_for('static',filename='img/shape2.svg')}}" alt="img" class="vector2" /> -->
+        </ul>
+    </div>
+    <!-- Contact section -->
+    
+    <section class="contact-section">
+        <div class="contact-left">
+            <form>
+                <div>
+                    <input type="text" name="name" placeholder="Name" class="box">
+                </div>
+                <div>
+                    <input type="text" name="email" placeholder="Email" class="box">
+                </div>
+                <div>
+
+                    <textarea name="message" placeholder="Message" class="box-msg"></textarea>
+                </div>
+                <button type="submit" class="btn-contact">Submit</button>
+            </form>
+        </div>
+        <div class="contact-right">
+            <image class="contact-img"
+                src="{{url_for('static',filename='img/back.png')}}" alt="img">
+        </div>
+
+    </section>
+</body>
+
+</html>

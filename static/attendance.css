@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+:root {
+    --color-white: #f3f3f3;
+    --color-darkblue: #1b1b32;
+    --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    display: block;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--color-darkblue);
+    background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)), url('https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* .container {} */
+
+.t {
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-title {
+    background: var(--color-darkblue-alpha);
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.25rem;
+}
+
+.table-dark {
+    --bs-table-bg: var(--color-darkblue-alpha) !important;
+    --bs-table-hover-bg: #4f82c7;
+    --bs-table-color: var(--color-white);
+}
+
+a {
+    color: #e4e4e4;
+}
+
+a:hover {
+    color: rgb(28, 222, 240);
+}
+
+.center {
+    text-align: center;
+}
+
+.globe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

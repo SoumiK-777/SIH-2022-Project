@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>option</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='option.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+</head>
+<body>
+
+  <div class="cards-wrapper">
+    <div class="card">
+      <div class="card--data">
+
+        <h3 class="card--title">Faculty Registration</h3>
+         <a class="btn-reg" href="{{url_for('tregistration')}}">Click here <i class="fa-solid fa-arrow-right-long"></i></a>
+   
+      </div>
+      <div class="card-img-wrapper">
+        <img src="{{url_for('static',filename='img/prof.svg')}}" alt="">
+        
+      </div>
+      <div class="card-img-deco">
+    </div>
+    </div>
+    <div class="card">
+      <div class="card--data">
+       
+        <h3 class="card--title">Student Registration</h3>
+        <a class="btn-reg" href="{{url_for('sregistration')}}">Click here <i class="fa-solid fa-arrow-right-long"></i></a>
+               
+      </div>
+      <div class="card-img-wrapper">
+        <img style="margin-top: -10px;" src="{{url_for('static',filename='img/stud.svg')}}" alt="">
+        
+      </div>
+      <div class="card-img-deco deco-2">
+    </div>
+    </div>
+
+</body>
+</html>

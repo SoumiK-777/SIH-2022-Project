@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='attendance.css')}}" />
+
+</head>
+
+<body>
+    <h1 class="center">Live streaming</h1>
+    <div class="globe">
+
+        <div class="vid">
+            <img src="{{ url_for('video') }}" alt="...">
+        </div>
+        <a class="center" href="{{url_for('attendance')}}">Attendance</button>
+    </div>
+    
+</body>
+</html>

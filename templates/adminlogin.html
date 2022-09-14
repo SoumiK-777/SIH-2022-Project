@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    to right top,
+    #5552ff,
+    #7671ff,
+    #938fff,
+    #aeacff,
+    #cac9ff
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+.main-container {
+  overflow: hidden;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6b6a6c;
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+.signin > p {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  color: #3d3d3d;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+.signin > p > a {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  color: #5552ff;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+.container {
+  padding: 0px 50px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  height: 520px;
+  border-radius: 7px;
+
+  background-color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  display: inline-block;
+  border: none;
+  color: #717171;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #5552ff;
+  color: white;
+  padding: 16px 20px;
+  margin: 10px 0;
+  margin-top: 30px;
+  
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  box-shadow: rgba(85, 82, 255, 0.336) 0px 15px 25px,
+    rgba(85, 82, 255, 0.218) 0px 5px 10px;
+    text-decoration: none;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+.form-item {
+  border: 1px solid #d4d4d4d0;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500 !important;
+  color: #3d3d3d;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none !important;
+}
+
+
+</style>
+<body>
+    <!-- <header class="header">
+            <h1 id="title" class="text-center">LOGIN</h1>
+        </header>
+        <form action="{{ url_for('login')}}" method="post" id="login-form">
+            <div class="text-center">
+                <image src="{{url_for('static',filename='img/logo.png')}}" height="72" alt="NIEPMD Logo" style="opacity: 1">
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input id="email" type="email" name="email" class="form-control" placeholder="Enter your email" required></input>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <a href="#" style="float: right;font: size 12px;">Forgot Password?</a>
+                <input type="password" class="form-control" placeholder="Enter the password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">Login</button>
+            </div>
+        </form> -->
+        <div class="main-container">
+      <form>
+        <div class="container">
+          <h1>Admin Login</h1>
+          <hr />
+
+          <div class="form-item">
+            <label for="email" id="name">UserID</label>
+            <input
+              type="text"
+              placeholder="Enter your UserID"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+
+            <div class="form-item">
+                <label for="email" id="name">Password</label>
+                <input
+                  type="password"
+                  placeholder="Enter your Password"
+                  name="password"
+                  id="password"
+                  required
+                />
+            
+          </div>
+        <hr/>
+            <div class="button">
+                <a href="" id="send" class="registerbtn">Register</a>
+            </div>
+            
+        </div>
+    
+        </div>
+      </form>
+    </div>
+</body>
+</html>

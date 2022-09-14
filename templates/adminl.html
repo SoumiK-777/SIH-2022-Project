@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Logged In</title>
+</head>
+
+<body>
+       <div class="container my-3">
+        <div class="t">
+
+            <div class="page-title d-flex justify-content-between">
+                <h2>Class Routine</h2>
+    <a class="btn btn-primary h-75" href="{{url_for('logout')}}">LOGOUT <i class="fa-solid fa-sign-out "></i></a>
+
+            </div>
+        </div>
+        <table class=" mt-4 table table-striped table-bordered table-hover shadow-sm ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Subject Code</th>
+                    <th scope="col">Password</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>PHYSICS</td>
+                    <td>PHY101</td>
+                    <td>Physics</td>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>CHEMISTRY</td>
+                    <td>CHEM102</td>
+                    <td>Chemsitry</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>MATHEMATICS</td>
+                    <td>MATH103</td>
+                    <td>Mathematics</td>
+                </tr>
+            </tbody>
+    </div>
+</body>
+
+</html>
