@@ -121,6 +121,7 @@ def register():
             return render_template('success.html')
     return render_template('register.html')
 
+@app.route('/video',methods =["GET", "POST"])
 def upload(name):
     name=name
     cam=cv2.VideoCapture(0)
