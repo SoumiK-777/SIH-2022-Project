@@ -6,7 +6,7 @@ import cv2
 import pickle
 from datetime import datetime
 import pandas as pd
-from twilio.rest import Client
+# from twilio.rest import Client
 import pytz
 import numpy as np
 import os
@@ -16,12 +16,12 @@ app.secret_key='abc'
 
 IST = pytz.timezone('Asia/Kolkata')
 
-app.config["SQLALCHEMY_BINDS"]={"std":"sqlite:///record/student.db","atd":"sqlite:///record/attendance.db"}
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///student.db"
+app.config["SQLALCHEMY_BINDS"]={"atd":"sqlite:///attendance.db"}
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 db=SQLAlchemy(app)
 
 class Student(db.Model):
-    __bind_key__='std'
     sno=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(50),nullable=False)
     email=db.Column(db.String(50),nullable=False)
@@ -90,7 +90,8 @@ def login():
         if email=='admin@xyz.com' and password=='Abcd@1234':
             return render_template("adminl.html")
         elif email=='PHY101' and password=='Physics':
-            return render_template("video.html")
+            # return render_template("video.html")
+            return redirect('video')
         elif email=='CHEM101' and password=='Chemistry':
             return render_template("video.html")
         elif email=="" and password=="":
@@ -121,8 +122,8 @@ def register():
             return render_template('success.html')
     return render_template('register.html')
 
-@app.route('/video',methods =["GET", "POST"])
-def upload(name):
+# @app.route('/video',methods =["GET", "POST"])
+def upload(name=""):
     name=name
     cam=cv2.VideoCapture(0)
     path="students"
@@ -158,34 +159,35 @@ def video():
     return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 def mark_attendance(id,name):
-    database="record/attendance.db"
-    conn=sqlite3.connect(database)
-    df=pd.read_sql_query("Select * from Attendance",conn)
-    if id!="" and name!="":
-        dt=datetime.now(IST).strftime("%d/%m/%Y")
-        if str(id) not in df["pid"].to_list():
-            it=datetime.now(IST).strftime('%H:%M:%S')
-            attd=Attendance(pid=id,pname=name,date=dt,intime=it)
-            db.session.add(attd)
-            db.session.commit()
-        if str(id) in df["pid"].to_list():
-            intimes=df["intime"].to_list()
-            t1=intimes[df["pid"].to_list().index(str(id))]
-            t2=datetime.now(IST).strftime('%H:%M:%S')
-            if time_to_sec(t2)-time_to_sec(t1)>=15:
-                job=Attendance.query.filter_by(pid=id).first()
-                db.session.delete(job)
-                attd=Attendance(pid=id,pname=name,date=dt,intime=t1,outtime=t2)
+    with app.app_context():
+        database="instance/attendance.db"
+        conn=sqlite3.connect(database)
+        df=pd.read_sql_query("Select * from Attendance",conn)
+        if id!="" and name!="":
+            dt=datetime.now(IST).strftime("%d/%m/%Y")
+            if str(id) not in df["pid"].to_list():
+                it=datetime.now(IST).strftime('%H:%M:%S')
+                attd=Attendance(pid=id,pname=name,date=dt,intime=it)
                 db.session.add(attd)
                 db.session.commit()
+            if str(id) in df["pid"].to_list():
+                intimes=df["intime"].to_list()
+                t1=intimes[df["pid"].to_list().index(str(id))]
+                t2=datetime.now(IST).strftime('%H:%M:%S')
+                if time_to_sec(t2)-time_to_sec(t1)>=15:
+                    job=Attendance.query.filter_by(pid=id).first()
+                    db.session.delete(job)
+                    attd=Attendance(pid=id,pname=name,date=dt,intime=t1,outtime=t2)
+                    db.session.add(attd)
+                    db.session.commit()
 
 def message():
     # sid="Your Twilio sid"
     # auth_token="Your Twilio auth token"
     # client=Client(sid,auth_token)
 
-    database1="record/attendance.db"
-    database2="record/student.db"
+    database1="instance/attendance.db"
+    database2="instance/student.db"
     conn1=sqlite3.connect(database1)
     conn2=sqlite3.connect(database2)
 
@@ -233,7 +235,7 @@ def generate_frames():
         if not success:
             break
         else:
-            # frame=cv2.flip(frame,1)
+            frame=cv2.flip(frame,1)
             process_frame=True
             if process_frame:
                 small_frame=cv2.resize(frame,(0,0),fx=0.25,fy=0.25)
